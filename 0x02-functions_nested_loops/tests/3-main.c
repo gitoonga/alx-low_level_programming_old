@@ -1,4 +1,4 @@
-#include "../customh.h"
+#include "../mai.h"
 
 /**
  * main - check the code.

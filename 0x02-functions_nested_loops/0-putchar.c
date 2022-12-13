@@ -1,4 +1,4 @@
-#include "customh.h"
+#include "main.h"
 
 /**
  *main - entry point to program
