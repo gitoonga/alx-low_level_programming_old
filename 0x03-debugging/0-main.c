@@ -2,6 +2,7 @@
 
 /**
  * main - entry point to the program
+ * @i: value being tested
  * Return: Always 0
  */
 
