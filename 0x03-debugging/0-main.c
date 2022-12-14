@@ -3,7 +3,6 @@
 /**
  * main - entry point to progam
  * Return: Always 0
- * @i: Digit being checked
  */
 
 int main(void)
