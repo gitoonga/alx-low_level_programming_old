@@ -46,7 +46,20 @@ void print_numbers(void);
 void print_most_numbers(void);
 
 /**
- * 
+ * more_numbers - Print numbers 0 - 14 ten times followed by a new line 
+ */
+
+void more_numbers(void);
+
+/**
+ * print_line - Prints a straight line in on the terminal
+ * @n: number of times the character '_' is printed
+ */
+
+void print_line(int n);
+
+/**
+ *
  */
 
 #endif
