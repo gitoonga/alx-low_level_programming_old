@@ -26,10 +26,10 @@ void swap_int(int *a, int *b);
 
 /**
  * main - returns the length of a string
- * @s: string
+ * @str: string
  */
 
-int _strlen(char *s);
+int _strlen(char *str);
 
 /**
  * _puts - prints a string, followed by a new line, to stdout
