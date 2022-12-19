@@ -19,7 +19,7 @@ void print_rev(char *str)
 
 	str--;
 
-	for (i = legthn; i > 0; i--)
+	for (i = length; i > 0; i--)
 	{
 		_putchar(*str);
 		str--;
