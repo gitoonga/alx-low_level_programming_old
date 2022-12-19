@@ -43,7 +43,7 @@ void _puts(char *str);
  * @s: string to reverse
  */
 
-void print_rev(char *s);
+void print_rev(char *str);
 
 /**
  * print_rev - reverses a string
