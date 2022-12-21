@@ -9,7 +9,9 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int d, s = 0;
+	int d = 0;
+	int s = 0;
+
 	/**loop over the dest until you meet the null character*/
 
 	while (dest[d] != '\0')
