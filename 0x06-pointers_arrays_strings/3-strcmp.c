@@ -2,32 +2,18 @@
 
 /**
  * _strcmp - compare two strings
- * @s1: one string
- * @s2: one string
+ * @s1: string1 counter
+ * @s2: string2 counter
  * Return: int that tells num spaces in between
  */
 
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0;
-	int j = 0;
-
-	while (s1[i] != '\0')
-		i++;
-
-	while (s2[j] != '\0')
-		j++;
-
-	if (i == j)
+	while (*s1 && *s2 && *s1 == *s2)
 	{
-		return (0);
+		s1++;
+		s2++;
 	}
-	else if (i < j)
-	{
-		return (i - j);
-	}
-	else
-	{
-		return (i - j);
-	}
+
+	return (*s1 - *s2);
 }
