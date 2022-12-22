@@ -20,7 +20,7 @@ char *leet(char *str)
 				str[i] = j + '0';
 		}
 
-		i;
+		i++;
 	}
 
 	return (str);
