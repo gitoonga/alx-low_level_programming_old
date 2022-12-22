@@ -2,7 +2,7 @@
 
 /**
  *rot13 - a simple letter substitution cipher that
- *replaces a letter with the 13th letter after it in the alphabet. 
+ *replaces a letter with the 13th letter after it in the alphabet.
  *@s: String being encoded
  *Return: The encoded string
  */
