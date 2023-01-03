@@ -1,0 +1,26 @@
+>>file crackme2 - used to determine the type of a file. .file type may be of human-readable(e.g. ‘ASCII text’) or MIME type(e.g. ‘text/plain; charset=us-ascii’). This command tests each argument in an attempt to categorize it.
+
+It has three sets of tests as follows:
+
+1) filesystem test: This test is based on the result which returns from a stat system call. The program verifies that if the file is empty, or if it’s some sort of special file. This test causes the file type to be printed.
+2) magic test: These tests are used to check for files with data in particular fixed formats.
+3) language test: This test search for particular strings which can appear anywhere in the first few blocks of a file.
+
+We notice the file is not stripped - strip is a GNU utility to "strip" symbols from object files. This is useful for minimizing their file size, streamlining them for distribution. It can also be useful for making it more difficult to reverse-engineer the compiled code.
+
+>>ltrace ./crackme2 - program is looking for an environment variable called jennieandjayloveasm and comparing it to the first 20 characters eg - ("XDG_SESSION_DESKTOP=pop", "jennieandjayloveasm=", 20) 
+
+>>export jennieandjayloveasm=password - export a new env variable called jennieandjayloveasm with value password
+
+when the system finds the jennieandjayloveasm environment variable, it gets the string length (notice the line strlen("password") ) for the value of that environment variable, and from the looks of it calculates an MD5 hash and compares it with a predefined md5 hash in the program.
+Let’s convert our input password to an MD5 hash to confirm it. we'll do it using bash:
+
+>>printf "password" | md5sum | cut -d' ' -f1 - The command does the following operations:
+
+1) The printf command is used to print the string "password" to the terminal.
+2) The output from the printf command is then piped to the md5sum command, which is used to generate the MD5 hash of the input.
+3) The output from the md5sum command is then piped to the cut command, which is used to extract a specific portion of each line of input. In this case, the -d option is used to specify that the delimiter is a space character, and the -f1 option is used to specify that the first field (i.e., the portion of the line before the first delimiter) should be printed. This will print 5f4dcc3b5aa765d61d8327deb882cf99
+
+So this MD5 hash is exactly what you can see in the ltrace output for our input password, and it is comparing it with a predefined md5 hash, e99a18c428cb38d5f260853678922e03, using strcmp. notice the print out strcmp("e99a18c428cb38d5f260853678922e03"..., "5f4dcc3b5aa765d61d8327deb882cf99"...)  
+
+use md5.gromweb.com to crack the string e99a18c428cb38d5f260853678922e03 you get abc123
