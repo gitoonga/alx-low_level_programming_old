@@ -8,7 +8,7 @@ It has three sets of tests as follows:
 
 We notice the file is not stripped - strip is a GNU utility to "strip" symbols from object files. This is useful for minimizing their file size, streamlining them for distribution. It can also be useful for making it more difficult to reverse-engineer the compiled code.
 
->>ltrace ./crackme2 - program is looking for an environment variable called jennieandjayloveasm and comparing it to the first 20 characters eg - ("XDG_SESSION_DESKTOP=pop", "jennieandjayloveasm=", 20) 
+>>ltrace ./crackme2 - program is looking for an environment variable called jennieandjayloveasm and comparing it to the first 20 characters eg - ("XDG_SESSION_DESKTOP=pop", "jennieandjayloveasm=", 20) {you can send this output to a file using the command ltrace -o ltracedump ./crackme2 where ltracedump is the file name}
 
 >>export jennieandjayloveasm=password - export a new env variable called jennieandjayloveasm with value password
 
