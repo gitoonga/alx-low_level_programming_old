@@ -7,7 +7,7 @@
  * Return: Pointer to c or NULL
  */
 
-char _strchr(char *s, char c)
+char *_strchr(char *s, char c)
 {
 	int i = 0;
 
@@ -17,5 +17,5 @@ char _strchr(char *s, char c)
 	if (s[i] == c)
 		return (&s[i]);
 	else
-		return (NULL);
+		return ('\0');
 }
