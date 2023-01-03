@@ -4,6 +4,7 @@
  * _strchr - return pointer to 1st location of char
  * @s: search string
  * @c: character to search
+ * Return: Pointer to c or NULL
  */
 
 char _strchr(char *s, char c)
