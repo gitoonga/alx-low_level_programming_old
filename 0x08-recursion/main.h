@@ -20,4 +20,10 @@ int root(int n, int i);
 int is_prime_number(int n);
 
 int divb(int n, int m);
+
+int compare(char *beg, char *end);
+
+int _strlen(char *s);
+
+int is_palindrome(char *s);
 #endif
