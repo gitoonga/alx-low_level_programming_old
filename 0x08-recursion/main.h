@@ -17,5 +17,7 @@ int _sqrt_recursion(int n);
 
 int root(int n, int i);
 
+int is_prime_number(int n);
 
+int divb(int n, int m);
 #endif
