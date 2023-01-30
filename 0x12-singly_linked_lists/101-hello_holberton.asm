@@ -1,33 +1,36 @@
+section .data
+    ; Define a null-terminated string "Hello, Holberton" followed by a line feed
+    str: db "Hello, Holberton", 0xa
+    
+    ; Calculate the length of the string
+    len equ $ - str
+	
 section .text
 
+; Define the entry point of the program
 global main
 
 main:
-; Set the length of the message in EDX register
-mov edx, len
+  ; Load the system call number for write into RAX
+  MOV RAX, 1
 
-; Set the address of the message in ECX register
-mov ecx, msg
+  ; Load the file descriptor for standard output into RDI
+  MOV RDI, 1
 
-; Set the standard output file descriptor (1) in EBX register
-mov ebx, 1
+  ; Load the address of the message into RSI
+  MOV RSI, str
 
-; Set the value 4 in EAX register to make a write system call
-mov eax, 4
+  ; Load the length of the message into RDX
+  MOV RDX, len
 
-; Make the system call (INT 0x80)
-int 0x80
+  ; Make the system call using the syscall instruction
+  syscall
 
-; Set the value 1 in EAX register to make an exit system call
-mov eax, 1
+  ; Load the system call number for exit into RAX
+  MOV RAX, 60
 
-; Make the system call (INT 0x80)
-int 0x80
+  ; Load the exit status into RDI
+  MOV RDI, 0
 
-section .data
-
-; Message to be output, null-terminated and followed by a line feed
-msg db "Hello, Holberton", 0xa
-
-; Length of the message, calculated as the difference between the end of the message and the start of the message
-len equ $ - msg
+  ; Make the system call using the syscall instruction
+  syscall
